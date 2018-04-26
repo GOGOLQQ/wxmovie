@@ -1,0 +1,16 @@
+/**app.wxss**/
+@import "fonts/iconfont.wxss";
+.container {
+  overflow: hidden;
+  box-sizing: border-box;
+} 
+.flex-row{display: flex;justify-content: space-between;}
+.flex-column{display: flex;flex-direction: column;}
+
+.georgia{font-family: 'Georgia'}
+.ellipsis { overflow: hidden; text-overflow: ellipsis;white-space:nowrap;}
+
+
+.imax{border:1px solid #509FC9;border-radius:2px;font-size:18rpx;margin-left: 6px;}
+.imax text:first-child{background-color:#509FC9;color:#fff;padding:0 4px;}
+.imax text:last-child{padding:0 2px;color:#509FC9;}

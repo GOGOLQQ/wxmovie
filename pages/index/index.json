@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "banner": "/components/banner/banner",
+    "loadMore": "/components/loadMore/loadMore"
+  }
+}

@@ -1,0 +1,13 @@
+var price = function (n) {
+  return n%1==0 ? n+".0" : n;
+}
+var joinImg = function (str,wh) {
+  str = str.split('w.h').join(wh);
+  return str;
+}
+
+
+module.exports = {
+  price: price,
+  joinImg: joinImg
+};

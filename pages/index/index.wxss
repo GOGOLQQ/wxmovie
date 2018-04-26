@@ -1,0 +1,37 @@
+
+.hotTabBar{background-color:#fff;height:54px;display:flex;justify-content:space-between;align-items:center;font-size:32rpx;border-bottom: 1px solid #dcdcdc;}
+.hotTabBar .location,.hotTabBar .searchBar{flex:1;display: flex;justify-content: center;}
+.hotTabBar .location text{font-size: 24rpx;color:#787878;margin: 10rpx 0 0 8rpx;}
+.hotTabBar .searchBar text{font-size: 48rpx;color:#1B9581;font-weight:700;}
+.hotTabBar .hotTabItem{flex:3;display: flex;justify-content: center;align-items: stretch;}
+.hotTabBar .hotTabItem text{flex:1;height:48px; line-height:54px;text-align: center;}
+.hotTabBar .current{color:#E64340;border-bottom:3px solid #E64340;}
+
+.view-item{display: flex;justify-content:space-around;font-size:28rpx;width:100%;}
+.view-item:not(:last-child){border-bottom: 1px solid #dcdcdc;}
+.view-item-img{display:flex;width:180rpx;padding:16rpx 0;justify-content:center;}
+.view-item-img image{width:148rpx;height:200rpx;} 
+.view-item-text{flex:2;padding:16rpx 20rpx 16rpx 0;line-height:48rpx;overflow:hidden;position:relative;}
+.view-item-text .buybtn{padding:0 .8em;position:absolute;top:50%;right:20rpx;transform:translateY(-50%);z-index:10;}
+.view-item-title{display: flex;justify-content: space-between;}
+ .view-item-text .scoreInfo{margin-top: -4px;} 
+.view-item-text .score{color:#ff6600;font-size:32rpx;}
+.view-item-title .wishNum{color:#787878;font-size:24rpx;}
+.view-item-title .wishNum .num{color:#ff6600;font-size:32rpx;}
+.view-item-text .titleInfo{width:65%;}
+.view-item-text .title{overflow: hidden;display:inline-block;vertical-align:middle;font-size: 28rpx;font-weight: 700;max-width:65%;}
+.view-item-text .otherInfo{color:#787878;}
+.view-item-text .otherInfo .view-item-star{width:80%;} 
+
+/*expect-row  */
+.expect-container{border-bottom:28rpx solid #F5F5F5;}
+.expect-header{height:90rpx;line-height:90rpx;font-size:28rpx;padding:0 30rpx;}
+.expect-body{padding:0 30rpx;}
+.expect-row{width:100%;height:360rpx;display:flex;white-space: nowrap;}
+.exp-item{width:96px;display:inline-block;font-size:28rpx;}
+.exp-item:not(:first-child){margin-left:24rpx;}
+.exp-item-cover{position:relative;height:136px;}
+.exp-item-cover .wish{background-color:rgba(0,0,0,.5);position:absolute;bottom:0;left:0;color:#fff;width:100%;font-size:22rpx;text-align:center;padding:3px 0;}
+.exp-item-cover .wish text{color:#F19600;}
+.exp-item-cover image{width:96px;height:136px;}
+.exp-item .exp-time{color:#787878;font-size:24rpx;}

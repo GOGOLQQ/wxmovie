@@ -1,0 +1,9 @@
+/* pages/cinema/cinema.wxss */
+/* components/dialog/dialog.wxss */
+.dialog-container{position:fixed;width:100%;top:0;left:0;right:0;bottom:0;background-color:rgba(0,0,0,.5);z-index: 10; }
+.dialog-body{width:66%;background-color:rgba(255,255,255,.9);overflow: hidden;border-radius:6px;position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);color:#333;}
+.dialog-header{border-bottom:1px solid #C8C8C8;height:45px;line-height:45px;padding:0 15px;font-size: 32rpx;}
+.dialog-content{padding:15px;line-height:48rpx;color:#666;text-align: center;}
+.dialog-footer{display: flex;height:45px;line-height:45px;text-align:center;justify-content:center;align-items:strech;border-top:1px solid #c8c8c8;}
+.dialog-btn{color:#a5a5a5;font-size:32rpx;flex:1;}
+.dialog-btn:last-child{background-color:#E6E6E6;color:#CB3407;}

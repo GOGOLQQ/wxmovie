@@ -1,0 +1,6 @@
+<view class='loading' wx:if="{{isShow}}">
+  <text>{{loadText}}</text>
+</view>
+<view class='loading' wx:if="{{isEnd}}">
+  <text>{{endText}}</text>
+</view>

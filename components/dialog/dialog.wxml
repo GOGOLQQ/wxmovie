@@ -1,0 +1,10 @@
+<view class='dialog-container' hidden="{{!isShow}}">
+    <view class='dialog-body {{isShow ? "active" :""}}'>
+        <view class='dialog-header'>{{title}}</view>
+        <view class='dialog-content'>{{content}}</view>
+        <view class='dialog-footer'>
+            <view class='dialog-btn' wx:if="{{!alert}}" catchtap="_cancelEvent">{{cancelText}}</view>
+            <view class='dialog-btn' catchtap="_confirmEvent">{{confirmText}}</view>
+        </view>
+    </view>
+</view>

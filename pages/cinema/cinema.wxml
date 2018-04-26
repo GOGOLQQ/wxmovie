@@ -1,0 +1,6 @@
+<!--pages/cinema/cinema.wxml-->
+<text>pages/cinema/cinema.wxml</text>
+
+<dialog id="dialog" title="消息提示" content="您确定要通过？" bind:cancelEvent="_cancelEvent" bind:confirmEvent="_confirmEvent"/>
+
+<button type='warn' bindtap="showDialog">Clime me</button>

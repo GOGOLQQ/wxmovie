@@ -1,0 +1,99 @@
+<!--index.wxml-->
+<wxs src="../../filterTools/filterTools.wxs" module="filter" />
+<view class="container">
+    <banner></banner>
+    <view class='hotTabBar'>
+        <view class='location'>北京
+            <text class='iconfont icon-xiangxia1'></text>
+        </view>
+        <view class='hotTabItem'>
+            <text class='{{current==1 && "current" }}' bind:tap="switchTab" data-index="1">正在热映</text>
+            <text class='{{current==2 && "current" }}' bind:tap="switchTab" data-index="2">即将上映</text>
+        </view>
+        <view class='searchBar'>
+            <text class='iconfont icon-sousuo'></text>
+        </view>
+    </view>
+    <!--正在热映/即将上映  -->
+    <view class='tabListBody'>
+        <!--正在热映  -->
+        <view class='tabListItem' hidden='{{current==2}}'>
+            <navigator wx:for="{{hotLists.movieLists}}" wx:key="index" url='../movieDetail/movieDetail?id={{item.id}}&title={{item.nm}}'>
+                <view class='view-item'>
+                    <view class='view-item-img'>
+                        <image src='{{filter.joinImg(item.img,"74.100")}}' mode="aspectFill"></image>
+                    </view>
+                    <view class='view-item-text'>
+                        <button type="warn" size="mini" class='buybtn' wx:if="{{item.globalReleased}}">购票</button>
+                        <button type='primary' size='mini' class='buybtn' wx:else>预售</button>
+                        <view class='view-item-title'>
+                            <view class='titleInfo'>
+                                <text class='title ellipsis'>{{item.nm}}</text>
+                                <text class='imax' wx:if='{{item.version}}'>
+                                <text>3D</text>
+                                <text>IMAX</text>
+                                </text>
+                            </view>
+                            <view class='scoreInfo'>
+                                <text class='score georgia' wx:if="{{item.globalReleased}}">{{filter.price(item.sc)}}</text>
+                                <text class='wishNum' wx:else><text class='num georgia'>{{item.wish}}</text>人想看</text>
+                            </view>
+                        </view>
+                        <view class='otherInfo'>
+                            <view class='view-item-data'>上映：{{item.rt}}</view>
+                            <view class='view-item-star ellipsis'>主演：{{item.star}}</view>
+                            <view class='view-item-sc'>{{item.showInfo}}</view>
+                        </view>
+                    </view>
+                </view>
+            </navigator>
+        </view>
+        <!--即将上映  -->
+
+        <view class='tabListItem' hidden='{{current==1}}'>
+            <view class='expect-container'>
+                <view class='expect-header'>近期最受期待...</view>
+                <view class='expect-body'>
+                    <scroll-view class='expect-row' scroll-x="{{true}}" bindscrolltolower="scrolltolower" scroll-left="3" >
+                         <navigator class='exp-item' wx:for="{{mostExpected.coming}}" wx:key="index" url='../movieDetail/movieDetail?id={{item.id}}&title={{item.nm}}'> 
+                            <view >
+                                <view class='exp-item-cover'>
+                                    <image src='{{filter.joinImg(item.img,"96.136")}}' lazy-load="{{true}}"></image>
+                                    <view class='wish'>
+                                        <text>{{item.wish}}</text>人想看</view>
+                                </view>
+                                <view class='exp-title ellipsis'>{{item.nm}}</view>
+                                <view class='exp-time'>{{item.comingTitle}}</view>
+                            </view>
+                         </navigator> 
+                    </scroll-view>
+                </view>
+            </view>
+            <navigator wx:for="{{comingLists.coming}}" wx:key="index" url='../movieDetail/movieDetail?id={{item.id}}&title={{item.nm}}'> 
+                <view class='view-item' wx:for="{{comingLists.coming}}" wx:key="index">
+                    <!-- <view class='view-item-week'>{{item.comingTitle}}</view> -->
+                    <view class='view-item-img'>
+                        <image src='{{filter.joinImg(item.img,"74.100")}}' mode="aspectFill"></image>
+                    </view>
+                    <view class='view-item-text'>
+                        <button type="warn" size="mini" class='buybtn' wx:if="{{item.showst==1}} ">想看</button>
+                        <button type='primary' size='mini' class='buybtn' wx:if="{{item.showst==4}} ">预售</button>
+                        <view class='titleInfo'>
+                            <text class='title'>{{item.nm}}</text>
+                        </view>
+                        <view>
+                            <text class='score georgia'>{{item.wish}}</text>人想看</view>
+                        <view class='otherInfo'>
+                            <view class='view-item-star ellipsis'>主演：{{item.star}}</view>
+                            <view class='view-item-data'>上映：{{item.rt}}</view>
+                        </view>
+                    </view>
+                </view>
+            </navigator> 
+        </view>
+
+
+    </view>
+    <!--loadMore  -->
+    <loadMore is-show="{{isShow}}" is-end="{{isEnd}}" load-text="正在加载... " />
+</view>

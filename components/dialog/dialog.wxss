@@ -1,0 +1,10 @@
+/* components/dialog/dialog.wxss */
+.dialog-container{position:fixed;width:100%;top:0;left:0;right:0;bottom:0;background-color:rgba(0,0,0,.5);z-index: 10; }
+.dialog-body{width:70%;background-color:rgba(255,255,255,.9);overflow: hidden;border-radius:6px;position:fixed;top:50%;left:50%;transform:translate(-50%,-50%) scale(1.2);color:#333;opacity:0;transition-duration: .3s;}
+.dialog-header{border-bottom:1px solid #C8C8C8;height:45px;line-height:45px;padding:0 15px;font-size: 32rpx;}
+.dialog-content{padding:15px;line-height:48rpx;color:#666;text-align: center;}
+.dialog-footer{display: flex;height:45px;line-height:45px;text-align:center;justify-content:center;align-items:strech;border-top:1px solid #c8c8c8;}
+.dialog-btn{color:#575757;font-size:32rpx;flex:1;}
+.dialog-btn:last-child{background-color:#e9e9e9;color:#CB3407;}
+/* .dialog-container.active{opacity: 1;transition:all .3s linear 0s; } */
+.dialog-body.active{opacity: 1;transform: translate(-50%,-50%) scale(1);} 

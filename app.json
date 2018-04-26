@@ -1,0 +1,48 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/hotlist/hotlist",
+        "pages/cominglist/cominglist",
+        "pages/movie/movie",
+        "pages/search/search",
+        "pages/about/about",
+        "pages/ucenter/ucenter",
+        "pages/cinema/cinema",
+        "pages/movieDetail/movieDetail"
+    ],
+    "window": {
+        "backgroundTextStyle": "dark",
+        "navigationBarBackgroundColor": "#1B9581",
+        "navigationBarTitleText": "猫眼电影",
+        "navigationBarTextStyle": "#fff",
+        "onReachBottomDistance": true
+    },
+    "tabBar": {
+        "color": "#333",
+        "selectedColor": "#1B9581",
+        "backgroundColor": "#eee",
+        "list": [
+            {
+                "pagePath": "pages/index/index",
+                "text": "推荐电影",
+                "iconPath": "images/movie.png",
+                "selectedIconPath": "images/movie-act.png"
+            },
+            {
+                "pagePath": "pages/cinema/cinema",
+                "text": "搜索",
+                "iconPath": "images/cinema.png",
+                "selectedIconPath": "images/cinema-act.png"
+            },
+            {
+                "pagePath": "pages/ucenter/ucenter",
+                "text": "关于我们",
+                "iconPath": "images/ucenter.png",
+                "selectedIconPath": "images/ucenter-act.png"
+            }
+        ]
+    },
+    "networkTimeout": {
+        "request":6000
+    }
+}

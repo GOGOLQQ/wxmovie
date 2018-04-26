@@ -1,0 +1,36 @@
+<template name="comingMovie">
+  <wxs src="../../filterTools/filterTools.wxs" module="filter" />
+  <view>
+    近期最受期待。。。
+  </view>
+  <view class='view-item' wx:for="{{movieLists}}" wx:key="index" data-id="{{item.id}}" data-title="{{item.nm}}" bind:tap="movieDetail">
+    <view class='view-item-img'>
+      <image src='{{filter.joinImg(item.img,"74.100")}}' mode="aspectFill"></image>
+    </view>
+    <view class='view-item-text'>
+      <button type="warn" size="mini" class='buybtn' wx:if="{{item.globalReleased}}">购票</button>
+      <button type='primary' size='mini' class='buybtn' wx:else>预售</button>
+      <view class='view-item-title'>
+        <view class='titleInfo'>
+          <text class='title'>{{item.nm}}</text>
+          <text class='imax' wx:if='{{item.version}}'>
+          <text>3D</text>
+          <text>IMAX</text>
+          </text>
+        </view>
+        <view class='scoreInfo'>
+          <text class='score georgia' wx:if="{{item.globalReleased}}">{{filter.price(item.sc)}}</text>
+          <text class='wishNum' wx:else><text class='num georgia'>{{item.wish}}</text>人想看</text>
+        </view>
+      </view>
+      <view class='otherInfo'>
+        <view class='view-item-data'>上映：{{item.rt}}</view>
+        <view class='view-item-star ellipsis'>主演：{{item.star}}</view>
+        <view class='view-item-sc'>{{item.showInfo}}</view>
+      </view>
+    </view>
+  </view>
+  <!--/  -->
+  <loadMore is-show="{{isShow}}" is-end="{{isEnd}}" load-text="正在加载..." />
+
+</template>

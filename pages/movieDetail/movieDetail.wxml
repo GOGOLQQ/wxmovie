@@ -1,0 +1,27 @@
+<wxs src="../../filterTools/filterTools.wxs" module="filter" />
+<view class='container'>
+  <view class="movie-detail">
+    <view class='detail-bg'></view>
+    <view class='detail-cover' wx:if="{{detail.img}}" style='background:url({{filter.joinImg(detail.img,"71.700")}}) no-repeat left top;background-size:cover;'></view>
+    <view class='detail'>
+      <view class='poster'>
+        <image wx:if="{{detail.img}}" src='{{filter.joinImg(detail.img,"148.208")}}'></image>
+      </view>
+      <view class='content'>
+        <view class='title ellipsis'>{{detail.nm}}</view>
+        <view class='entitle ellipsis'>{{detail.enm}}</view>
+        <view class='sorce'>{{detail.sc}}
+          <text class='snum'>({{detail.snum}})</text>
+        </view>
+        <view class='tags'>{{detail.cat}}
+          <text class='imax' wx:if='{{item.version}}'>
+          <text>3D</text>
+          <text>IMAX</text>
+          </text>
+        </view>
+        <view class='from'>{{detail.src}}/{{detail.dur}}分钟</view>
+        <!-- <view class='pubDesc' wx:if="{{detail.pubDesc}}">{{detail.pubDesc}}</view> -->
+      </view>
+    </view>
+  </view>
+</view>
